@@ -20,7 +20,7 @@ func TestResolveVariables_Precedence(t *testing.T) {
 	writeFile(t, filepath.Join(root, ".wirepad", "env", "dev.env"), "source=private\nbase=private\nprivate_only=1\n")
 
 	opts := ResolveOptions{
-		EnvName:      "dev",
+		EnvName:       "dev",
 		PrivateEnvDir: filepath.Join(root, ".wirepad", "env"),
 		SharedEnvDir:  filepath.Join(root, "env"),
 		DotEnvPath:    filepath.Join(root, ".env"),

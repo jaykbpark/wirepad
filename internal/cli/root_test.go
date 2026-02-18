@@ -48,7 +48,7 @@ func TestExecute_SendHelp(t *testing.T) {
 	}
 }
 
-func TestExecute_SendNotImplemented(t *testing.T) {
+func TestExecute_SendMissingRequestFile(t *testing.T) {
 	var out bytes.Buffer
 	var errOut bytes.Buffer
 
@@ -57,7 +57,7 @@ func TestExecute_SendNotImplemented(t *testing.T) {
 		t.Fatalf("expected exit code 1, got %d", code)
 	}
 
-	if !strings.Contains(errOut.String(), "wirepad send is not implemented yet") {
-		t.Fatalf("expected not implemented error, got %q", errOut.String())
+	if !strings.Contains(errOut.String(), "resolve request:") {
+		t.Fatalf("expected resolve request error, got %q", errOut.String())
 	}
 }

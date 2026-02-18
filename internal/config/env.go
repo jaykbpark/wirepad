@@ -17,8 +17,8 @@ const (
 )
 
 type ResolveOptions struct {
-	EnvName      string
-	CLI          map[string]string
+	EnvName       string
+	CLI           map[string]string
 	PrivateEnvDir string
 	SharedEnvDir  string
 	DotEnvPath    string
