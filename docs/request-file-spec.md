@@ -171,6 +171,9 @@ expect:
 - `set`: set runtime variable
 - `export`: map response JSONPath to named variable
 
+`export` values are scoped to the current run in MVP and persisted into the run history record.
+They are not automatically written back into `env/*.env` or `.wirepad/env/*.env`.
+
 Non-MVP hooks can add script execution later if needed.
 
 ## Validation Rules
