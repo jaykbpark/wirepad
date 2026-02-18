@@ -98,6 +98,16 @@ Policy:
 - `env/*.env` should contain non-sensitive values or placeholders.
 - `env/*.env.example` can be committed for onboarding.
 
+## Exported Variables
+
+Request hooks can export values from responses (for example, `user_id` from `$.id`).
+
+- In MVP, exports are persisted only inside that run record:
+  - `.wirepad/history/runs/<run_id>.json`
+- Exports are available to replay/debug flows.
+- Exports do not mutate env files by default.
+- If we add persistence later, it will be explicit (for example a `persist_exports` option).
+
 ## Command Execution Logic
 
 `wirepad send <request> --env <name>` pipeline:
